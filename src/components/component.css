@@ -1,0 +1,28 @@
+html {
+    background-color:#dddddd!important;
+}
+.input{
+    margin-right: 0rem !important;
+    padding-right: 0rem !important;
+    margin-top: 2rem!important;
+  }
+  form{
+          background-color:#dddddd  !important;
+  }
+
+  body{
+      background-color:#dddddd}
+
+  .title{
+     display:inline-flex;
+     position: relative;
+     left: 10rem !important;
+    font-size: 5rem;
+    line-height: vh;
+    color: #ddbad0;
+    font-family: 'Niconne', cursive;
+    font-weight: 700;
+    text-shadow: 2px 2px 0px #633458, 
+                  5px 5px 0px #8667a3, 
+                  3px 3px 0px 
+  }
