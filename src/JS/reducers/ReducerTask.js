@@ -1,6 +1,6 @@
 import { ADD_TASK, DONE_TASK, EDIT_TASK } from "../actionsTypes/Constants";
 const initialState = {
-  list: [],
+  list: []
 };
 
 const ReducerTask = (state = initialState, action) => {
@@ -12,14 +12,16 @@ const ReducerTask = (state = initialState, action) => {
         state,
         list: state.list.map((el) =>
           el.payload === action.payload ? { ...el, isDone: !el.isDone } : state
-        ),
+        )
       };
     case EDIT_TASK:
       return {
         ...state,
         list: state.list.map((el) =>
-          el.id === action.payload.id ? action.payload : el
-        ),
+          el.id === action.payload.id
+            ? { ...el, text: action.payload.text, isDone: false }
+            : el
+        )
       };
     default:
       return state;

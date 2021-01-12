@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { useDispatch } from "react-redux";
+
 import { Button } from "react-bootstrap";
 import { editTask } from "../JS/actions/ActionTask";
 
@@ -21,10 +23,13 @@ const EditModal = ({ toDo }) => {
   const toggleModal = () => {
     setShow(!show);
   };
+
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newTask = { ...toDo, text: text };
-    editTask(newTask);
+
+    dispatch(editTask({ id: toDo.id, text: text }));
     toggleModal();
   };
   return (

@@ -3,13 +3,13 @@ import "../components/component.css";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 import { addTask } from "../JS/actions/ActionTask";
 import { useDispatch } from "react-redux";
-
+import {v4 as uuid4} from 'uuid'
 const Addtask = () => {
   const [myInput, setMyInput] = useState("");
   const dispatch = useDispatch();
   const add = (e) => {
     e.preventDefault();
-    dispatch(addTask({ text: myInput, id: Date.now(), isDone: false }));
+    dispatch(addTask({ text: myInput, id: uuid4(), isDone: false }));
     setMyInput("");
   };
   return (
